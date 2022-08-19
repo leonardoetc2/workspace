@@ -8,7 +8,7 @@ let password= document.getElementById('Obcontrase')
 function login(){
     localStorage.setItem('sesion', true);
     alert('sesion iniciada')
-    window.location.href = window.location.origin;
+    window.location.href = window.location.origin
 }
 
 

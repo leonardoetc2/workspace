@@ -11,7 +11,7 @@ function login(){
     window.location.href = window.location.origin
 }
 
-
+//chequear el valor de los elementos
 function validation(){
     if(Email.value !="" && password.value !=""){
         login()

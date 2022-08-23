@@ -1,6 +1,6 @@
 const auto = await fetch("https://japceibal.github.io/emercado-api/cats_products/101.json").then(response => response.json());
  let car = document.getElementById("car");
- 
+
 function h(nombre){
     for (let index = 0; index < nombre.products.length; index++) {
 	car.innerHTML += `

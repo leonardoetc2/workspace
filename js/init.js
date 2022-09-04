@@ -39,5 +39,6 @@ let getJSONData = function(url){
         return result;
     });
 }
+//aqui puse el id pato para que apezca en email en el la parte superior
 const PatoNav= document.getElementById("pato")
-PatoNav.innerHTML= `<a class="nav-link" href="./login.html"  >${localStorage.getItem('usuario')||""}</a>`
+PatoNav.innerHTML= `<a class="nav-link" href="./login.html"  >${localStorage.getItem('usuario')||"login"}</a>`

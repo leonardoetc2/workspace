@@ -39,3 +39,5 @@ let getJSONData = function(url){
         return result;
     });
 }
+const PatoNav= document.getElementById("pato")
+PatoNav.innerHTML= `<a class="nav-link" href="./login.html"  >${localStorage.getItem('usuario')||"login"}</a>`

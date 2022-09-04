@@ -6,7 +6,8 @@ let password= document.getElementById('Obcontrase')
 
 //creee una funcion login para cambiar de pagina 
 function login(){
-    localStorage.setItem('sesion', true);
+    let uwu= Email.value
+    localStorage.usuario = uwu
     alert('sesion iniciada')
     window.location.href = window.location.origin
 }

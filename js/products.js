@@ -46,7 +46,7 @@ var max = document.getElementById("rangeMax")
 var min = document.getElementById("rangeMin")
 var search= document.getElementById("search")
 
-
+/* 
 function f2(){
     productos = list
   if(min.value != "")[
@@ -56,13 +56,14 @@ function f2(){
     productos = productos.filter(products =>nombre.products[index].cost < max.value)
   ]
   h(productos)
-}
+}*/
 
 
 //lo demas los productos en general
 function h(nombre){
     for (let index = 0; index < nombre.products.length; index++) {
 	car.innerHTML += `
+  <div onclick="idd(${nombre.products[index].id})" class="list-group-item list-group-item-action cursor-active">
     <div class="row">
     <div class="col-3">
         <img src="${nombre.products[index].image}" alt="${nombre.products[index].description}" class="img-thumbnail">
@@ -77,10 +78,10 @@ function h(nombre){
         <p class="mb-1"> Descripcion: </p>
         <p class="mb-1">${nombre.products[index].description}</p>
         <p class="mb-1">${nombre.products[index].currency} ${nombre.products[index].cost}</p>
-        
+        </div>
     </div>
 </div>
     `
 }
 }
- h(auto) ;f2()
+ h(auto) ;

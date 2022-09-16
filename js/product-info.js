@@ -26,10 +26,60 @@ function inicio(array){
   </div>
   <hr>
             `
-
-
         document.getElementById("P-info").innerHTML = mucho_textp;
     }
+    /* los comentarios altamente inspirados en lo mostrado en clases  */
+    function MostrarComent(comments){
+        if(comments.length === 0){
+           document.getElementById("P-info2").innerHTML = '<p class="text-muter> Oops! No hay comentarios para mostrar...</p>';
+       }else{ 
+           let estrella_podrida = '<i class="fas fa-star checked"></i>'.repeat(5);
+           for (let i = 0; i < comments.length; i++) { 
+             if(comments[1].score > 0 && comments[i].score <= 5) {
+                 estrella_podrida = '<i class="fa fa-star checked"></i>'.repeat(comments[i].score);
+                 estrella_podrida += '<i class=-fas fa-star checked"></i>'.repeat(5 - comments[i].score); 
+                 }
+
+                     document.getElementById("P-info2").innerHTML += `<li class="media border list-group-item"> 
+                     <div class="media-body">
+                         <label class="mt-0"><strong>${comments[i].user}</strong>
+                             <span class="mute"> - ${comments[i].dateTime}</span>
+                             <span> - ${estrella_podrida}</span>
+                         </label>
+                         <br>
+                         <label class="small">${comments[i].description}</label>
+                     </div>
+                     </li>
+                     `
+                   };
+               }; 
+           };
+
+           function addcoment(){
+            let parrfo =document.getElementById("P-info3")
+            parrfo.innerHTML=`
+            <h1 class="my-3">Agregar Comentario</h1>
+                <hr class="my-4">
+                <div class="row mt-4 g-3">
+                    <div class="col-sm-4">
+                    <label for="Item" class="form-label">
+                        start:
+                        <select name="estrellas" id="">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select> 
+                    </label>
+                    <input type="text" class="form-control" id="item">
+                    <div class="d-grid">
+                        <button type="button" class="btn btn-primary my-3" id="agregar">Agregar</button>
+                    </div>
+                    </div>
+                 </div>
+                 `
+        }
 
 function productosyeso(array){
 
@@ -57,7 +107,7 @@ function productosyeso(array){
                 ProductArray = resultObj.data
                 inicio(ProductArray);
                 productosyeso(ProductArray);
-                
+                console.log(ProductArray)
             }
         });
         });
@@ -65,66 +115,13 @@ function productosyeso(array){
             if (resultObj.status === "ok"){
                 cuack = resultObj.data
                 
-                showProductComments(cuack)
+                MostrarComent(cuack)
                 addcoment()
                 console.log(cuack)
             }
         });
     
-        function showProductComments(comments){
-             if(comments.length === 0){
-                document.getElementById("P-info2").innerHTML = '<p class="text-muter> Oops! No hay comentarios para mostrar...</p>';
-            }else{ 
-                 let estrella_podrida = '<i class="fas fa-star"></i>'.repeat(5);
-                  for (let i = 0; i < comments.length; i++) { 
-                    if(comments[1].score > 0 && comments[i].score <= 5) {
-                        estrella_podrida = '<i class="fa fa-star"></i>'.repeat(comments[i].score);
-                        estrella_podrida += '<i class=-fas fa-star checked"></i>'.repeat(5 - comments[i].score); 
-                        }
-
-                          document.getElementById("P-info2").innerHTML += `<li class="media border list-group-item"> 
-                          <div class="media-body">
-                              <label class="mt-0"><strong>${comments[i].user}</strong>
-                                  <span class="mute"> - ${comments[i].dateTime}</span>
-                                  <span> - ${estrella_podrida}</span>
-                              </label>
-                              <br>
-                              <label class="small">${comments[i].description}</label>
-                          </div>
-                          </li>
-                          `
-
-
-            
-                        };
-                    }; 
-                };
+   
                
-                function addcoment(){
-                    let parrfo =document.getElementById("P-info3")
-                    parrfo.innerHTML=`
-                    <h1 class="my-3">Agregar Comentario</h1>
-                        <hr class="my-4">
-                        <div class="row mt-4 g-3">
-                            <div class="col-sm-4">
-                            <label for="Item" class="form-label">
-                                start:
-                                <select name="estrellas" id="">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select> 
-                            </label>
-                            <input type="text" class="form-control" id="item">
-                            <div class="d-grid">
-                                <button type="button" class="btn btn-primary my-3" id="agregar">Agregar</button>
-                            </div>
-                            </div>
-                         </div>
-                         `
-
-                }
-
+               
          

@@ -3,7 +3,9 @@ const button = document.querySelector("#boton_inicio")
 let Email=document.getElementById('ObEmail')
 let password= document.getElementById('Obcontrase')
 
-
+function clearl(){
+    localStorage.clear()
+}
 //creee una funcion login para cambiar de pagina 
 function login(){
     let uwu= Email.value
@@ -18,5 +20,6 @@ function validation(){
         login()
     }
 }
+clearl()
 button.addEventListener('click' ,validation)
 

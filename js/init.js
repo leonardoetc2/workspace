@@ -45,5 +45,24 @@ let getJSONData = function(url){
     });
 }
 //aqui puse el id pato para que apezca en email en el la parte superior
-const PatoNav= document.getElementById("pato")
-PatoNav.innerHTML= `<a class="nav-link" href="./login.html"  >${localStorage.getItem('usuario')||"login"}</a>`
+document.addEventListener("DOMContentLoaded", function(){
+    const PatoNav= document.getElementById("pato")
+    let con_usuario=`<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    ${localStorage.getItem('usuario')}
+      </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+          <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+          <li><a class="dropdown-item" href="./login.html">Cerrar sesión</a></li>
+        </ul>
+      </div>`
+    let sin_user=`<a class="nav-link" href="./login.html" >login</a>`
+    
+      if(localStorage.getItem('usuario')){
+        PatoNav.innerHTML=con_usuario
+      }else{
+        PatoNav.innerHTML=sin_user
+       }
+
+})

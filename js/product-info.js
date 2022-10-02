@@ -109,7 +109,7 @@ function inicio(array){
                  </div>
                  `
         }
-
+// productos relacionados
 function productosyeso(array){
 
     let mucho_textp = "";

@@ -44,7 +44,7 @@ let getJSONData = function(url){
         return result;
     });
 }
-//aqui puse el id pato para que apezca en email en el la parte superior
+//aqui puse la interfaz de usuartio 
 document.addEventListener("DOMContentLoaded", function(){
     const PatoNav= document.getElementById("pato")
     let con_usuario=`<div class="dropdown">

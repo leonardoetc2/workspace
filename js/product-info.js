@@ -7,7 +7,7 @@ function inicio(array){
     let mucho_textp = "";
     mucho_textp += `
     <Div style="margin:1.3em;">
-    <h1>${array.name}</h1>
+    <h1 >${array.name}</h1> <button type="button" onclick="idd2(${array.id})" class="btn btn-success">comprar</button>
   </Div>
   <hr>
   <div>
@@ -146,10 +146,9 @@ function productosyeso(array){
                 
                 MostrarComent(cuack)
                 addcoment()
-                console.log(cuack)
+                
             }
         });
-    
    
                
                

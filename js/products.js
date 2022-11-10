@@ -1,6 +1,6 @@
 const auto = await fetch(`https://japceibal.github.io/emercado-api/cats_products/${localStorage.getItem("catID")}.json`).then(response => response.json());
  let car = document.getElementById("car");
-
+console.log(auto)
 //el filtro html del 4 al 42
 const filter= document.getElementById("filtro")
 filter.innerHTML=`<div class="row">

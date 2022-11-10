@@ -11,6 +11,11 @@ const idd= function idd(id) {
   localStorage.setItem("catID2", id);
   window.location = "product-info.html"
 } 
+const idd2= function idd2(id) {
+
+  localStorage.setItem("carrito", id);
+  window.location = "cart.html"
+} 
 /* fi */
 let showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";

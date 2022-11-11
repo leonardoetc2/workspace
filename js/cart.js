@@ -1,6 +1,6 @@
 const PAPEL = ('https://japceibal.github.io/emercado-api/user_cart/25801.json') 
 let idinfo = localStorage.getItem('catID2');
-let l15= document.getElementById("goldradio")
+        let l15= document.getElementById("goldradio")
         let l7= document.getElementById("premiumradio")
         let l5= document.getElementById("standardradio")
         let porcentaje= 0;
@@ -12,15 +12,8 @@ let l15= document.getElementById("goldradio")
         const ArrayDatos = data;
         prueba(ArrayDatos.articles)
         
-         console.log(ArrayDatos.articles)
+         
     });
-     
- fetch(PRODUCT_INFO_URL+idinfo + EXT_TYPE)
- .then(response => response.json())
- .then(data => {
-     const lll = data;
-      console.log(lll)
- })
 })
 
  
@@ -57,7 +50,7 @@ function prueba(array) {
 
 const input = document.getElementById(propent.id);
         
-// me permite la multiplicacion 
+// add Event a cada imput para actualizar el precio total y asi
 input.addEventListener("input", () => {
   document.querySelector(".SubTotal").innerHTML = `${propent.currency} ${Number(input.value) * propent.unitCost}`;
 document.getElementById("productCostText").innerHTML = `${propent.currency} ${Number(input.value) * propent.unitCost}`  
@@ -83,5 +76,27 @@ l5.addEventListener("click",()=>{
 
     });
 }
+
+
+//validacion de boostrap y ya
+(function () {
+  'use strict'
+
+  
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Bucle sobre ellos y evitar el envío
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
 
 

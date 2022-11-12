@@ -50,7 +50,7 @@ function prueba(array) {
 
 const input = document.getElementById(propent.id);
         
-// add Event a cada imput para actualizar el precio total y asi
+// add Event a cada imput para actualizar el precio total
 input.addEventListener("input", () => {
   document.querySelector(".SubTotal").innerHTML = `${propent.currency} ${Number(input.value) * propent.unitCost}`;
 document.getElementById("productCostText").innerHTML = `${propent.currency} ${Number(input.value) * propent.unitCost}`  
@@ -81,11 +81,7 @@ l5.addEventListener("click",()=>{
 //validacion de boostrap y ya
 (function () {
   'use strict'
-
-  
   var forms = document.querySelectorAll('.needs-validation')
-
-  // Bucle sobre ellos y evitar el envío
   Array.prototype.slice.call(forms)
     .forEach(function (form) {
       form.addEventListener('submit', function (event) {

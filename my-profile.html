@@ -51,10 +51,60 @@
     </div>
   </nav>
   <main>
+    <!-- formulario alterado de boostrap simple -->
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <div class="">
+        <h1 class="rounded">perfil</h1>
       </div>
+      <hr>
+      <div class="container row">
+        <form class="row g-3 needs-validation" novalidate>
+          <div class="col-6">
+            <label for="validationCustom01" class="form-label ">Nombre</label>
+            <input type="text" class="form-control " id="nombre" value="" required>
+            <div class="valid-feedback">
+              ¡Se ve bien!
+            </div>
+          </div>
+          <div class="col-6">
+            <label for="validationCustom01" class="form-label ">Segundo Nombre</label>
+            <input type="text" class="form-control " id="sNombre" value="" required>
+            <div class="valid-feedback">
+              ¡Se ve bien!
+            </div>
+          </div>
+          <div class="col-6">
+            <label for="validationCustom01" class="form-label ">Apellido</label>
+            <input type="text" class="form-control " id="Apellido" value="" required>
+            <div class="valid-feedback">
+              ¡Se ve bien!
+            </div>
+          </div>
+          <div class="col-6">
+            <label for="validationCustom02" class="form-label ">Segundo Apellido</label>
+            <input type="text" class="form-control " id="SApellido" value="" required>
+            <div class="valid-feedback">
+              ¡Se ve bien!
+            </div>
+          </div>
+          <div class="col-6" id="localEmali">
+
+          </div>
+
+          <div class="col-6">
+            <label for="validationCustom03" class="form-label ">Teléfono de contacto</label>
+            <input type="number" class="form-control  " id="phono" required>
+            <div class="invalid-feedback">
+              número de teléfono invalido
+            </div>
+          </div>
+          <hr>
+          <div class="col-6">
+            <button class="btn btn-primary" type="submit" onclick="valor()">Enviar formulario</button>
+          </div>
+        </form>
+      </div>
+    </div>
     </div>
   </main>
   <footer class="text-muted">
